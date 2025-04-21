@@ -1,10 +1,72 @@
 import Image from "next/image";
 import styles from "@/components/page.module.css";
 import Navbar from "@/components/navbar";
+
+interface Experience {
+  title: string;
+  prevTitles?: string[];
+  business: string;
+  dates: string;
+  description: string;
+  skills: string[];
+}
+
 export default function Home() {
+
+  const experience : Experience[] = [
+    {
+      title: "Software Developer",
+      prevTitles: ["Software Developer Intern"],
+      business: "Reyes Coca-Cola Bottling",
+      dates: "2023 - Present",
+      description: "Built, styled, and maintained websites, automation, and services for a diverse array of projects and teams across the organization. Worked closely with cross-functional teams including developers and product managers to deliver custom internal tools and applications.",
+      skills: ["Azure", "Azure DevOps", "Power Platform", "JavaScript", "HTML & CSS", ],
+    }
+  ]
+
+  const buildExperience = (exp: Experience, index: number) => {
+    return (
+      <li key={index}>
+        <span className={styles.dates}>{exp.dates}</span>
+        <h2>
+          <div>
+            <span className={styles.title}>{exp.title}</span> · <span className={styles.business}>{exp.business}</span>
+          </div>
+          {exp.prevTitles?.map((prevTitle, index) => (
+            <div key={index}>
+              <span className={styles.titlePrev}>{prevTitle}</span>
+            </div>
+          ))}
+        </h2>
+        <p className={styles.description}>{exp.description}</p>
+        <ul className={styles.skills}>
+          {buildSkills(exp.skills)}
+        </ul>
+      </li>
+    )
+  }
+
+  const buildSkills = (skills: string[]) => {
+    return skills.map((skill, index) => (
+      <li key={index} className={styles.skill}>
+        {skill}
+      </li>
+    ));
+  };
+
   return (
     <div className={styles.page}>
       <Navbar />
+      <main id="main" className={styles.main}>
+        <section className={`${styles.section} ${styles.basic}`}>
+          <h1>Experience</h1>
+          <ul className={styles.experience}>
+            {experience.map((exp, index) => (
+              buildExperience(exp, index)
+            ))}
+          </ul>
+        </section>
+      </main>
       {/* <main className={styles.main}>
         <Image
           className={styles.logo}

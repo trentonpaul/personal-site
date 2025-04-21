@@ -6,6 +6,7 @@ import Link from 'next/link'
 export default function Navbar() {
     return (
         <header className={styles.header}>
+            {/* TODO: ADD SKIP TO CONTENT */}
             <div className={styles.headerWrapper}>
                 <div className={`${styles.logo} ${styles.grow}`}>
                     <Link href="/">
@@ -19,9 +20,9 @@ export default function Navbar() {
                 </div>
                 <nav className={styles.navbar}>
                     <ul className="navbar__menu">
-                        <li className={styles.grow}><Link href="/">Portfolio</Link></li>
-                        <li className={styles.grow}><Link href="/about">About</Link></li>
-                        <li className={styles.grow}><Link href="/contact">Contact</Link></li>
+                        <li className={styles.grow}><Link href="/">About</Link></li>
+                        <li className={styles.grow}><Link href="/about">Experience</Link></li>
+                        <li className={styles.grow}><Link href="/contact">Projects</Link></li>
                     </ul>
                 </nav>
             </div>
