@@ -8,7 +8,12 @@
 }
 
 .section {
-  padding: 6% 15%;
+  padding: 3% 15%;
+}
+
+.accent {
+  background-color: var(--color-accent);
+  color: var(--color-dark);
 }
 
 .experience {
@@ -80,7 +85,7 @@
 
 @media screen and (max-width: 1024px) {
   .section {
-    padding: 6% 5%;
+    padding: 3% 5%;
   }
 
   .experience > li {
@@ -91,7 +96,7 @@
 
 @media screen and (max-width: 666px) {
   .section {
-    padding: 6% 5%;
+    padding: 3% 5%;
   }
 
   .experience > li {

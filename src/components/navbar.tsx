@@ -21,8 +21,8 @@ export default function Navbar() {
                 <nav className={styles.navbar}>
                     <ul className="navbar__menu">
                         <li className={styles.grow}><Link href="/">About</Link></li>
-                        <li className={styles.grow}><Link href="/about">Experience</Link></li>
-                        <li className={styles.grow}><Link href="/contact">Projects</Link></li>
+                        <li className={styles.grow}><Link href="/#experience">Experience</Link></li>
+                        <li className={styles.grow}><Link href="/#projects">Projects</Link></li>
                     </ul>
                 </nav>
             </div>

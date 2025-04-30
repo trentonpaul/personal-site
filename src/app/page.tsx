@@ -19,7 +19,7 @@ export default function Home() {
       prevTitles: ["Software Developer Intern"],
       business: "Reyes Coca-Cola Bottling",
       dates: "2023 - Present",
-      description: "Built, styled, and maintained websites, automation, and services for a diverse array of projects and teams across the organization. Worked closely with cross-functional teams including developers and product managers to deliver custom internal tools and applications.",
+      description: "Built, styled, and maintained websites, automation, and services for a diverse array of projects and teams across the company. Worked closely with cross-functional teams including developers and product managers to deliver custom internal tools and applications.",
       skills: ["Azure", "Azure DevOps", "Power Platform", "JavaScript", "HTML & CSS", ],
     }
   ]
@@ -58,13 +58,16 @@ export default function Home() {
     <div className={styles.page}>
       <Navbar />
       <main id="main" className={styles.main}>
-        <section className={`${styles.section} ${styles.basic}`}>
+        <section id="experience" className={`${styles.section} ${styles.basic}`}>
           <h1>Experience</h1>
           <ul className={styles.experience}>
             {experience.map((exp, index) => (
               buildExperience(exp, index)
             ))}
           </ul>
+        </section>
+        <section id="projects" className={`${styles.section} ${styles.accent}`}>
+          <h1>Projects</h1>
         </section>
       </main>
       {/* <main className={styles.main}>
