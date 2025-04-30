@@ -8,7 +8,7 @@
 }
 
 .section {
-  padding: 3% 15%;
+  padding: 3% 15% 0% 15%;
 }
 
 .accent {
@@ -27,7 +27,7 @@
 
 .experience > li {
   border-bottom: 1px solid rgb(from var(--foreground) r g b / var(--experience-opacity));
-  padding: 32px;
+  padding: 24px;
 }
 
 .experience > li:last-of-type {
@@ -85,7 +85,7 @@
 
 @media screen and (max-width: 1024px) {
   .section {
-    padding: 3% 5%;
+    padding: 3% 5% 0% 5%;
   }
 
   .experience > li {
@@ -96,7 +96,7 @@
 
 @media screen and (max-width: 666px) {
   .section {
-    padding: 3% 5%;
+    padding: 3% 5% 0% 5%;
   }
 
   .experience > li {

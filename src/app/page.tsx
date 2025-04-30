@@ -5,7 +5,7 @@ import Navbar from "@/components/navbar";
 interface Experience {
   title: string;
   prevTitles?: string[];
-  business: string;
+  business?: string;
   dates: string;
   description: string;
   skills: string[];
@@ -13,7 +13,7 @@ interface Experience {
 
 export default function Home() {
 
-  const experience : Experience[] = [
+  const experiences : Experience[] = [
     {
       title: "Software Developer",
       prevTitles: ["Software Developer Intern"],
@@ -30,7 +30,7 @@ export default function Home() {
         <span className={styles.dates}>{exp.dates}</span>
         <h2>
           <div>
-            <span className={styles.title}>{exp.title}</span> · <span className={styles.business}>{exp.business}</span>
+            <span className={styles.title}>{exp.title}</span> {exp.business && <span className={styles.business}>· {exp.business}</span>}
           </div>
           {exp.prevTitles?.map((prevTitle, index) => (
             <div key={index}>
@@ -61,12 +61,12 @@ export default function Home() {
         <section id="experience" className={`${styles.section} ${styles.basic}`}>
           <h1>Experience</h1>
           <ul className={styles.experience}>
-            {experience.map((exp, index) => (
+            {experiences.map((exp, index) => (
               buildExperience(exp, index)
             ))}
           </ul>
         </section>
-        <section id="projects" className={`${styles.section} ${styles.accent}`}>
+        <section id="projects" className={`${styles.section} ${styles.basic}`}>
           <h1>Projects</h1>
         </section>
       </main>
